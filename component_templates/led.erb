@@ -1,0 +1,16 @@
+/*============================================================================*/
+/* 单片机指示灯 */
+enum led
+{
+<% @leds.each do |led| -%>
+  <%= led.name %>,
+<% end -%>
+};
+
+<% @leds.each do |led| -%>
+  <%- %>// 对应针脚为<%= led.pinout %>
+  <%- %>#define <%= "#{led.name}_DIR" %> <%= led.dir %>
+  <%- %>#define <%= "#{led.name}_OUT" %> <%= led.out %>
+  <%- %>#define <%= "#{led.name}_PORT" %> <%= led.port %>
+
+<% end -%>

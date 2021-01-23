@@ -1,0 +1,23 @@
+/*============================================================================*/
+/* 单片机PWM信号 */
+<% pwms = @ssignals.select { |s| s.type == 'PWM' }.map(&:unwrap) -%>
+enum pwm
+{
+<% pwms.each do |pwm| -%>
+  <%= pwm.name %>,
+<% end -%>
+};
+
+<% pwms.each do |pwm| -%>
+  <%- %>#define <%= "#{pwm.timer.name}_CTL" %> <%= pwm.timer.ctl %>      // 时钟控制器
+  <%- %>#define <%= "#{pwm.timer.name}_MC" %> <%= pwm.timer.mc %>         // 时钟计数模式选择UP
+  <%- %>#define <%= "#{pwm.timer.name}_SSEL" %> <%= pwm.timer.ssel %>   // 时钟源选择SMCLK
+  <%- %>#define <%= "#{pwm.timer.name}_CEILING" %> <%= pwm.timer.ceiling %> // 第一计时器
+  <%- %>#define <%= "#{pwm.name}_DIR" %> <%= pwm.dir %>
+  <%- %>#define <%= "#{pwm.name}_SEL" %> <%= pwm.sel %>         // 输出口功能位
+  <%- %>#define <%= "#{pwm.name}_PORT" %> <%= pwm.port %>
+  <%- %>#define <%= "#{pwm.name}_CTL" %> <%= pwm.ctl %>      // 控制器
+  <%- %>#define <%= "#{pwm.name}_CEILING" %> <%= pwm.ceiling %>   // 第二计时器
+  <%- %>#define <%= "#{pwm.name}_OUTMOD" %> <%= pwm.outmod %>   // 时钟跳变模式
+
+<% end -%>

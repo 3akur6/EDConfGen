@@ -1,0 +1,40 @@
+/*============================================================================*/
+/* 电机驱动模块 */
+enum common
+{
+<%- %>  CMN_A,
+<%- %>  CMN_B,
+};
+
+enum signal
+{
+<%- %>  SIGNAL_A,
+<%- %>  SIGNAL_B,
+};
+
+// 使能端口X（若使用PWM信号，须与PWM输出端口设置保持一致）
+#define EN_X_DIR <%= @motor_driver.en_x.dir %>
+#define EN_X_PIN <%= @motor_driver.en_x.out %>
+#define EN_X_PORT <%= @motor_driver.en_x.port %>
+
+// 使能端口Y（若使用PWM信号，须与PWM输出端口设置保持一致）
+#define EN_Y_DIR <%= @motor_driver.en_y.dir %>
+#define EN_Y_PIN <%= @motor_driver.en_y.out %>
+#define EN_Y_PORT <%= @motor_driver.en_y.port %>
+
+// 输出口A、B（逻辑电平，控制电机状态）
+#define IN_A_DIR <%= @motor_driver.in_a.dir %>
+#define IN_A_PIN <%= @motor_driver.in_a.out %>
+#define IN_A_PORT <%= @motor_driver.in_a.port %>
+#define IN_B_DIR <%= @motor_driver.in_b.dir %>
+#define IN_B_PIN <%= @motor_driver.in_b.out %>
+#define IN_B_PORT <%= @motor_driver.in_b.port %>
+
+// 输出口C、D（逻辑电平，控制电机状态）
+#define IN_C_DIR <%= @motor_driver.in_c.dir %>
+#define IN_C_PIN <%= @motor_driver.in_c.out %>
+#define IN_C_PORT <%= @motor_driver.in_c.port %>
+#define IN_D_DIR <%= @motor_driver.in_d.dir %>
+#define IN_D_PIN <%= @motor_driver.in_d.out %>
+#define IN_D_PORT <%= @motor_driver.in_d.port %>
+

@@ -1,0 +1,18 @@
+/*============================================================================*/
+/* 单片机按钮 */
+enum button
+{
+<% @buttons.each do |button| -%>
+  <%= button.name %>,
+<% end -%>
+};
+
+<% @buttons.each do |button| -%>
+  <%- %>// 对应针脚为<%= button.pinout %>
+  <%- %>#define <%= "#{button.name}_DIR" %> <%= button.dir %>
+  <%- %>#define <%= "#{button.name}_IN" %> <%= button.in %>
+  <%- %>#define <%= "#{button.name}_PORT" %> <%= button.port %>
+  <%- %>#define <%= "#{button.name}_REN" %> <%= button.ren %>
+  <%- %>#define <%= "#{button.name}_OUT" %> <%= button.out %>
+
+<% end -%>

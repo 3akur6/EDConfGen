@@ -1,0 +1,39 @@
+{
+  "buttons": {
+    "BUTTON_A": "P2.1",
+    "BUTTON_B": "P1.1"
+  },
+  "leds": {
+    "LED_A": "P1.0",
+    "LED_B": "P4.7"
+  },
+  "pwms": {
+    "PWM_A": "P1.4",
+    "PWM_B": "P1.5"
+  },
+  "motor_driver": {
+    "left": {
+      "enable_signal": {
+        "EN_A": "PWM_A"
+      },
+      "control_pinouts": {
+        "IN_A": "P2.2",
+        "IN_B": "P2.3"
+      }
+    },
+    "right": {
+      "enable_signal": {
+        "EN_B": "PWM_B"
+      },
+      "control_pinouts": {
+        "IN_C": "P2.4",
+        "IN_D": "P2.5"
+      }
+    }
+  },
+  "infrared_sensor": {
+    "L": "P6.4",
+    "C": "P6.5",
+    "R": "P6.6"
+  }
+}
