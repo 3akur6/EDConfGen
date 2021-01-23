@@ -69,4 +69,3 @@ usage: ./main.rb [options]
 1) Pinouts assigned in config won't be checked in this generator. Make sure they are correctly set.
 2) Buttons and leds are reserved in pinouts, mapped to P2.1, P1.1, P1.0 and P4.7 in msp430f5529.
    Never change them if using msp430f5529.
-3) The final
