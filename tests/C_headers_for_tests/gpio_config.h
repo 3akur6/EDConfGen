@@ -2,8 +2,8 @@
 /* 单片机按钮 */
 enum button
 {
-  BUTTON_A,
-  BUTTON_B,
+    BUTTON_A,
+    BUTTON_B,
 };
 
 // 对应针脚为P2.1
@@ -24,8 +24,8 @@ enum button
 /* 单片机指示灯 */
 enum led
 {
-  LED_A,
-  LED_B,
+    LED_A,
+    LED_B,
 };
 
 // 对应针脚为P1.0
@@ -42,8 +42,8 @@ enum led
 /* 单片机PWM信号 */
 enum pwm
 {
-  PWM_A,
-  PWM_B,
+    PWM_A,
+    PWM_B,
 };
 
 #define TIMER_A_CTL TA0CTL      // 时钟控制器
@@ -72,14 +72,14 @@ enum pwm
 /* 电机驱动模块 */
 enum common
 {
-  CMN_A,
-  CMN_B,
+    CMN_A,
+    CMN_B,
 };
 
 enum signal
 {
-  SIGNAL_A,
-  SIGNAL_B,
+    SIGNAL_A,
+    SIGNAL_B,
 };
 
 // 使能端口X（若使用PWM信号，须与PWM输出端口设置保持一致）
@@ -128,3 +128,37 @@ enum signal
 #define R_OUT P6OUT
 #define R_PIN P6IN
 #define R_PORT BIT6
+
+/*============================================================================*/
+/* UART */
+enum uart
+{
+    UART_A,
+    UART_B,
+};
+
+// 对应针脚为P3.3, P3.4
+#define UART_A_CTL UCA0CTL1
+#define UART_A_SEL P3SEL
+#define UART_A_TXD BIT3
+#define UART_A_RXD BIT4
+#define UART_A_BR0 UCA0BR0
+#define UART_A_BR1 UCA0BR1
+#define UART_A_MCTL UCA0MCTL
+
+// 对应针脚为P4.4, P4.5
+#define UART_B_CTL UCA1CTL1
+#define UART_B_SEL P4SEL
+#define UART_B_TXD BIT4
+#define UART_B_RXD BIT5
+#define UART_B_BR0 UCA1BR0
+#define UART_B_BR1 UCA1BR1
+#define UART_B_MCTL UCA1MCTL
+
+/*============================================================================*/
+/* 继电器模块 */
+// 对应针脚为P1.3
+#define RELAY_DIR P1DIR
+#define RELAY_OUT P1OUT
+#define RELAY_PORT BIT3
+

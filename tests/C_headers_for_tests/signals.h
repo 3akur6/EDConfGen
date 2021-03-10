@@ -2,8 +2,8 @@
 /* 单片机PWM信号 */
 enum pwm
 {
-  PWM_A,
-  PWM_B,
+    PWM_A,
+    PWM_B,
 };
 
 #define TIMER_A_CTL TA0CTL      // 时钟控制器

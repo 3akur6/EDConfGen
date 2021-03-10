@@ -1,0 +1,20 @@
+/*============================================================================*/
+/* UART */
+enum uart
+{
+<% @uarts.each do |uart| -%>
+  <%- %>    <%= uart.name %>,
+<% end -%>
+};
+
+<% @uarts.each do |uart| -%>
+  <%- %>// 对应针脚为<%= uart.pinouts.join(', ') %>
+  <%- %>#define <%= "#{uart.name}_CTL" %> <%= uart.ctl %>
+  <%- %>#define <%= "#{uart.name}_SEL" %> <%= uart.sel %>
+  <%- %>#define <%= "#{uart.name}_TXD" %> <%= uart.txd %>
+  <%- %>#define <%= "#{uart.name}_RXD" %> <%= uart.rxd %>
+  <%- %>#define <%= "#{uart.name}_BR0" %> <%= uart.br0 %>
+  <%- %>#define <%= "#{uart.name}_BR1" %> <%= uart.br1 %>
+  <%- %>#define <%= "#{uart.name}_MCTL" %> <%= uart.mctl %>
+
+<% end -%>

@@ -7,5 +7,9 @@ module Constants
     'P2.3' => 'TA2.0', 'P2.4' => 'TA2.1', 'P2.5' => 'TA2.2'
   }.freeze
 
+  UART_TABLE = {
+    'P3.3' => 'UCA0CTL1', 'P3.4' => 'UCA0CTL1', 'P4.4' => 'UCA1CTL1', 'P4.5' => 'UCA1CTL1'
+  }.freeze
+
   SIGNAL_TYPES = %w[CMN PWM].freeze
 end

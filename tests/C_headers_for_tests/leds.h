@@ -2,8 +2,8 @@
 /* 单片机指示灯 */
 enum led
 {
-  LED_A,
-  LED_B,
+    LED_A,
+    LED_B,
 };
 
 // 对应针脚为P1.0

@@ -1,0 +1,9 @@
+/*============================================================================*/
+/* 继电器模块 */
+<% @relays.each do |relay| -%>
+  <%- %>// 对应针脚为<%= relay.pinout %>
+  <%- %>#define <%= "#{relay.name}_DIR" %> <%= relay.dir %>
+  <%- %>#define <%= "#{relay.name}_OUT" %> <%= relay.out %>
+  <%- %>#define <%= "#{relay.name}_PORT" %> <%= relay.port %>
+
+<% end -%>

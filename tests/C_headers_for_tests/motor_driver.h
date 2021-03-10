@@ -2,8 +2,8 @@
 /* 单片机PWM信号 */
 enum pwm
 {
-  PWM_A,
-  PWM_B,
+    PWM_A,
+    PWM_B,
 };
 
 #define TIMER_A_CTL TA0CTL      // 时钟控制器
@@ -32,14 +32,14 @@ enum pwm
 /* 电机驱动模块 */
 enum common
 {
-  CMN_A,
-  CMN_B,
+    CMN_A,
+    CMN_B,
 };
 
 enum signal
 {
-  SIGNAL_A,
-  SIGNAL_B,
+    SIGNAL_A,
+    SIGNAL_B,
 };
 
 // 使能端口X（若使用PWM信号，须与PWM输出端口设置保持一致）

@@ -2,8 +2,8 @@
 /* 单片机按钮 */
 enum button
 {
-  BUTTON_A,
-  BUTTON_B,
+    BUTTON_A,
+    BUTTON_B,
 };
 
 // 对应针脚为P2.1

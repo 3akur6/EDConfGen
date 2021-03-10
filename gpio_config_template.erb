@@ -6,4 +6,8 @@
 <% -%>
 <%= ERB.new(File.read('component_templates/motor_driver.erb'), trim_mode: '-', eoutvar: '_sub04').result(binding) unless @motor_driver.nil? -%>
 <% -%>
-<%= ERB.new(File.read('component_templates/infrared_sensor.erb'), eoutvar: '_sub05').result(binding) unless @infrared_sensor.nil? -%>
+<%= ERB.new(File.read('component_templates/infrared_sensor.erb'), trim_mode: '-', eoutvar: '_sub05').result(binding) unless @infrared_sensor.nil? -%>
+<% -%>
+<%= ERB.new(File.read('component_templates/uart.erb'), trim_mode: '-', eoutvar: '_sub06').result(binding) unless @uarts.nil? -%>
+<% -%>
+<%= ERB.new(File.read('component_templates/relay.erb'), trim_mode: '-', eoutvar: '_sub07').result(binding) unless @relays.nil? -%>

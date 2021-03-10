@@ -5,6 +5,8 @@ require_relative 'components/led'
 require_relative 'components/motor_driver'
 require_relative 'components/infrared_sensor'
 require_relative 'components/ssignal'
+require_relative 'components/relay'
+require_relative 'components/uart'
 
 class Generator
   def initialize(config)
@@ -18,7 +20,8 @@ class Generator
               (parse_leds if @json.dig('leds')) &&
               (parse_infrared_sensor if @json.dig('infrared_sensor')) &&
               (parse_signals if @json.dig('pwms') || @json.dig('cmns')) &&
-              (parse_motor_driver if @json.dig('motor_driver'))
+              (parse_motor_driver if @json.dig('motor_driver')) &&
+              (parse_relays if @json.dig('relays')) && (parse_uarts if @json.dig('uarts'))
     self
   end
 
@@ -72,6 +75,18 @@ class Generator
 
   def parse_infrared_sensor
     @infrared_sensor = InfraredSensor.new('INFRARED_SENSOR_A', @json['infrared_sensor'])
+    self
+  end
+
+  def parse_relays
+    @relays = []
+    @json.dig('relays').each { |k, v| @relays << Relay.new(k, v) }
+    self
+  end
+
+  def parse_uarts
+    @uarts = []
+    @json.dig('uarts').each { |k, v| @uarts << UART.new(k, v) }
     self
   end
 end
