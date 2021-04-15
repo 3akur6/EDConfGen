@@ -31,53 +31,31 @@ usage: ./main.rb [options]
 
 ```json5
 {
-  "buttons": {
-    // plugin type --> components/button.rb, component_templates/button.erb
-    "BUTTON_A": "P2.1",
-    // plugin name: pinout in chip --> enum button BUTTON_A
-    "BUTTON_B": "P1.1"
-    // ------------------------------> enum button BUTTON_B
+  "buttons": {          // plugin type --> components/button.rb, component_templates/button.erb
+    "BUTTON_A": "P2.1", // plugin name: pinout in chip --> enum button BUTTON_A
+    "BUTTON_B": "P1.1"  // ------------------------------> enum button BUTTON_B
   },
-  "leds": {
-    // plugin type --> components/led.rb, component_templates/led.erb
-    "LED_A": "P1.0",
-    // ---------------------------------> enum led LED_A
-    "LED_B": "P4.7"
-    // ---------------------------------> enum led LED_B
+  "leds": {          // plugin type --> components/led.rb, component_templates/led.erb
+    "LED_A": "P1.0", // ---------------------------------> enum led LED_A
+    "LED_B": "P4.7"  // ---------------------------------> enum led LED_B
   },
   "pwms": {
-    "PWM_A": "P1.4",
-    // <----------|
-    "PWM_B": "P1.5"
-    // <----------|--|
-  },
-  //            |  |
-  "motor_driver": {
-    //            |  |
-    "left": {
-      //            |  |
-      "enable_signal": {
-        //        |  |
-        "EN_A": "PWM_A"
-        // -------|  |
-      },
-      //         |
-      "control_pinouts": {
-        //         |
-        "IN_A": "P2.2",
-        //         |
-        "IN_B": "P2.3"
-        //         |
-      }
-      //         |
-    },
-    //         |
-    "right": {
-      //         |
-      "enable_signal": {
-        //           |
-        "EN_B": "PWM_B"
-        // ----------|
+    "PWM_A": "P1.4", // <----------|
+    "PWM_B": "P1.5"  // <----------|--|
+  },                 //            |  |
+  "motor_driver": {  //            |  |
+    "left": {        //            |  |
+      "enable_signal": { //        |  |
+        "EN_A": "PWM_A"  // -------|  |
+      },                   //         |
+      "control_pinouts": { //         |
+        "IN_A": "P2.2",    //         |
+        "IN_B": "P2.3"     //         |
+      }                    //         |
+    },                     //         |
+    "right": {             //         |
+      "enable_signal": { //           |
+        "EN_B": "PWM_B"  // ----------|
       },
       "control_pinouts": {
         "IN_C": "P2.4",
