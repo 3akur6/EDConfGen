@@ -1,0 +1,9 @@
+/*============================================================================*/
+/* MOS管模块 */
+<% @mos.each do |mos| -%>
+  <%- %>// 对应针脚为<%= mos.pinout %>
+  <%- %>#define <%= "#{mos.name}_DIR" %> <%= mos.dir %>
+  <%- %>#define <%= "#{mos.name}_OUT" %> <%= mos.out %>
+  <%- %>#define <%= "#{mos.name}_PORT" %> <%= mos.port %>
+
+<% end -%>

@@ -11,3 +11,5 @@
 <%= ERB.new(File.read('component_templates/uart.erb'), trim_mode: '-', eoutvar: '_sub06').result(binding) unless @uarts.nil? -%>
 <% -%>
 <%= ERB.new(File.read('component_templates/relay.erb'), trim_mode: '-', eoutvar: '_sub07').result(binding) unless @relays.nil? -%>
+<% -%>
+<%= ERB.new(File.read('component_templates/mos.erb'), trim_mode: '-', eoutvar: '_sub08').result(binding) unless @mos.nil? -%>

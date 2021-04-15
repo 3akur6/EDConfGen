@@ -1,12 +1,5 @@
 require 'json'
 require 'erb'
-require_relative 'components/button'
-require_relative 'components/led'
-require_relative 'components/motor_driver'
-require_relative 'components/infrared_sensor'
-require_relative 'components/ssignal'
-require_relative 'components/relay'
-require_relative 'components/uart'
 
 class Generator
   def initialize(config)
@@ -21,7 +14,8 @@ class Generator
               (parse_infrared_sensor if @json.dig('infrared_sensor')) &&
               (parse_signals if @json.dig('pwms') || @json.dig('cmns')) &&
               (parse_motor_driver if @json.dig('motor_driver')) &&
-              (parse_relays if @json.dig('relays')) && (parse_uarts if @json.dig('uarts'))
+              (parse_relays if @json.dig('relays')) && (parse_uarts if @json.dig('uarts')) &&
+              (parse_mos if @json.dig('mos'))
     self
   end
 
@@ -81,6 +75,12 @@ class Generator
   def parse_relays
     @relays = []
     @json.dig('relays').each { |k, v| @relays << Relay.new(k, v) }
+    self
+  end
+
+  def parse_mos
+    @mos = []
+    @json.dig('mos').each { |k, v| @mos << MOS.new(k, v) }
     self
   end
 

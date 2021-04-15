@@ -39,6 +39,9 @@
   "relays": {
     "RELAY": "P1.3"
   },
+  "mos": {
+    "MOS": "P2.7"
+  },
   "uarts": {
     "UART_A": {
       "TXD": "P3.3",

@@ -2,7 +2,7 @@ require 'test/unit'
 require_relative '../generator'
 
 class TestGenerator < Test::Unit::TestCase
-  COMPONENTS = %i[@buttons @leds @ssignals @motor_driver @infrared_sensor @relays @uarts].freeze
+  COMPONENTS = %i[@buttons @leds @ssignals @motor_driver @infrared_sensor @relays @uarts @mos].freeze
 
   def initialize(test_method_name)
     super
@@ -130,7 +130,6 @@ class TestGenerator < Test::Unit::TestCase
 
   def test_combination
     expected = File.read('tests/C_headers_for_tests/gpio_config.h')
-    File.write('combination.txt', @gen.result)
     assert_equal(expected, @gen.result)
   end
 
